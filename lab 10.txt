@@ -1,0 +1,72 @@
+1.
+package Inheritancelab;
+
+public class Vehicle {
+    String make;
+    String model;
+    int year;
+    int maximumspeed;
+
+    public Vehicle(String make,String model,int year,int maximumspeed)
+    {
+        this.make=make;
+        this.model=model;
+        this.year=year;
+        this.maximumspeed=maximumspeed;}
+        void drive(){
+         System.out.println(make+" "+model +"is driving");
+    }
+    }
+
+//car class
+package Inheritancelab;
+
+public class Car extends Vehicle {
+
+    public Car(String make, String model, int year, int maximumspeed) {
+        super(make, model, year, maximumspeed);
+    }
+    void drive(){
+        System.out.println(make+" "+model + "is driving");
+    }
+}
+//bike class
+package Inheritancelab;
+
+public class Bike extends Vehicle {
+    public Bike(String make, String model, int year, int maximumspeed) {
+        super(make, model, year, maximumspeed);
+    }
+    void drive(){
+        System.out.println(make+" "  +model + "is driving");
+    }
+}
+//main class
+package Inheritancelab;
+
+ class Main {
+    public static void main(String[] args) {
+        // Instantiate the Car class
+        Car car = new Car("Hyundai", "Creta", 2021, 180);
+        // Print the attributes of the Car
+        System.out.println("Car Details: ");
+        System.out.println("Make: " + car.make);
+        System.out.println("Model: " + car.model);
+        System.out.println("Year: " + car.year);
+        System.out.println("Maximum Speed: " + car.maximumspeed + " km/h");
+        // Call the drive method for the Car
+        car.drive();
+
+        // Instantiate the Bike class
+        Bike bike = new Bike("Hero", "Splendor", 2021, 120);
+        // Print the attributes of the Bike
+        System.out.println("\nBike Details: ");
+        System.out.println("Make: " + bike.make);
+        System.out.println("Model: " + bike.model);
+        System.out.println("Year: " + bike.year);
+        System.out.println("Maximum Speed: " + bike.maximumspeed + " km/h");
+        // Call the drive method for the Bike
+        bike.drive();
+    }
+}
+
